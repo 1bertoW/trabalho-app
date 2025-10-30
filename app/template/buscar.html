@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha página em FLASK</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>buscar</h1>
+
+       <h1>Formulário com GET</h1>
+    <form action="/buscar" method="get">
+        <label>Nome do produto: </label>
+        <input type="text" name="nome">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <ul>
+        {% for nome_produto in produto %}
+            {% if nome_produto == produto %}
+                <li class="">{{ produto }}</li>
+            {% else %}
+                <li class=""><p>não encontrado</p></li>
+            {% endif %}
+        {% endfor %}
+    </ul>    
+</body>
+</html>
